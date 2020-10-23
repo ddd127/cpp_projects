@@ -1,12 +1,13 @@
-#define OLYMP_TEMPLATE
+//to use this template uncomment next line
+//#define OLYMP_TEMPLATE
 #ifdef OLYMP_TEMPLATE
 
 #include <cassert>
 #include <cstdio>
 #include <algorithm>/** Fast allocation */
 
-//to use fast allocation uncomment next line
-#define FAST_ALLOCATOR_MEMORY 100000000
+// to use fast allocation uncomment next line
+//#define FAST_ALLOCATOR_MEMORY 100000000
 #ifdef FAST_ALLOCATOR_MEMORY
 int allocator_pos = 0;
 char allocator_memory[(int) FAST_ALLOCATOR_MEMORY];
@@ -23,7 +24,7 @@ inline void operator delete(void *) noexcept {}
 #endif
 
 //to use file io uncomment next line
-#define FILE_IO
+//#define FILE_IO
 
 /** Fast input-output */
 
@@ -262,6 +263,45 @@ inline void writeDouble(double x, int output_len) {
     x *= 10;
     t = std::min(9, (int) (x + 0.5));
     writeChar('0' + t);
+}
+
+// write() templates
+
+template<typename T>
+inline void write(const T&) {}
+
+template<>
+inline void write(const int& i)
+{
+    writeInt(i);
+}
+
+template<>
+inline void write(const unsigned int& i)
+{
+    writeInt<unsigned int>(i);
+}
+
+template<>
+inline void write(const long long& i)
+{
+    writeInt<long long>(i);
+}
+
+template<>
+inline void write(const char& i)
+{
+    writeChar(i);
+}
+
+template<>
+inline void write(const double& i)
+{
+    writeDouble(i);
+}
+
+inline void write() { // writes '\n'
+    writeChar('\n');
 }
 
 #endif
