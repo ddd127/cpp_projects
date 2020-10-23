@@ -1,10 +1,12 @@
-#include <bits/stdc++.h>
-#include <cassert>
+#define OLYMP_TEMPLATE
+#ifdef OLYMP_TEMPLATE
 
-/** Fast allocation */
+#include <cassert>
+#include <cstdio>
+#include <algorithm>/** Fast allocation */
 
 //to use fast allocation uncomment next line
-// #define FAST_ALLOCATOR_MEMORY 100000000
+#define FAST_ALLOCATOR_MEMORY 100000000
 #ifdef FAST_ALLOCATOR_MEMORY
 int allocator_pos = 0;
 char allocator_memory[(int) FAST_ALLOCATOR_MEMORY];
@@ -21,7 +23,7 @@ inline void operator delete(void *) noexcept {}
 #endif
 
 //to use file io uncomment next line
-//#define FILE_IO
+#define FILE_IO
 
 /** Fast input-output */
 
@@ -170,6 +172,41 @@ inline bool readLine(char *s) {
     return c != -1;
 }
 
+// read() templates
+
+template <typename T>
+inline void read(T &) {}
+
+template <>
+inline void read(int &i)
+{
+    i = readInt();
+}
+
+template <>
+inline void read(long long &i)
+{
+    i = readInt<long long>();
+}
+
+template <>
+inline void read(unsigned int &i)
+{
+    i = readUInt();
+}
+
+template <>
+inline void read(double &i)
+{
+    i = readDouble();
+}
+
+template <>
+inline void read(char &i)
+{
+    i = readChar();
+}
+
 /** Write */
 
 static int write_buf_pos = 0;
@@ -227,7 +264,7 @@ inline void writeDouble(double x, int output_len) {
     writeChar('0' + t);
 }
 
-
+#endif
 
 int main() {
     // write your code here
