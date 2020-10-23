@@ -1,10 +1,12 @@
-//to use this template uncomment next line
+// to use this template uncomment next line
 //#define OLYMP_TEMPLATE
 #ifdef OLYMP_TEMPLATE
 
 #include <cassert>
 #include <cstdio>
-#include <algorithm>/** Fast allocation */
+#include <algorithm>
+
+/** Fast allocation */
 
 // to use fast allocation uncomment next line
 //#define FAST_ALLOCATOR_MEMORY 100000000
@@ -23,7 +25,7 @@ inline void operator delete(void *) noexcept {}
 //inline void operator delete [] ( void * ) { assert(0); }
 #endif
 
-//to use file io uncomment next line
+// to use file io uncomment next line
 //#define FILE_IO
 
 /** Fast input-output */
