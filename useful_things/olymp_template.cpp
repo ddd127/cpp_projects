@@ -1,10 +1,15 @@
-#include <bits/stdc++.h>
+// to use this template uncomment next line
+//#define OLYMP_TEMPLATE
+#ifdef OLYMP_TEMPLATE
+
 #include <cassert>
+#include <cstdio>
+#include <algorithm>
 
 /** Fast allocation */
 
-//to use fast allocation uncomment next line
-// #define FAST_ALLOCATOR_MEMORY 100000000
+// to use fast allocation uncomment next line
+//#define FAST_ALLOCATOR_MEMORY 100000000
 #ifdef FAST_ALLOCATOR_MEMORY
 int allocator_pos = 0;
 char allocator_memory[(int) FAST_ALLOCATOR_MEMORY];
@@ -20,7 +25,7 @@ inline void operator delete(void *) noexcept {}
 //inline void operator delete [] ( void * ) { assert(0); }
 #endif
 
-//to use file io uncomment next line
+// to use file io uncomment next line
 //#define FILE_IO
 
 /** Fast input-output */
@@ -170,6 +175,41 @@ inline bool readLine(char *s) {
     return c != -1;
 }
 
+// read() templates
+
+template <typename T>
+inline void read(T &) {}
+
+template <>
+inline void read(int &i)
+{
+    i = readInt();
+}
+
+template <>
+inline void read(long long &i)
+{
+    i = readInt<long long>();
+}
+
+template <>
+inline void read(unsigned int &i)
+{
+    i = readUInt();
+}
+
+template <>
+inline void read(double &i)
+{
+    i = readDouble();
+}
+
+template <>
+inline void read(char &i)
+{
+    i = readChar();
+}
+
 /** Write */
 
 static int write_buf_pos = 0;
@@ -227,7 +267,46 @@ inline void writeDouble(double x, int output_len) {
     writeChar('0' + t);
 }
 
+// write() templates
 
+template<typename T>
+inline void write(const T&) {}
+
+template<>
+inline void write(const int& i)
+{
+    writeInt(i);
+}
+
+template<>
+inline void write(const unsigned int& i)
+{
+    writeInt<unsigned int>(i);
+}
+
+template<>
+inline void write(const long long& i)
+{
+    writeInt<long long>(i);
+}
+
+template<>
+inline void write(const char& i)
+{
+    writeChar(i);
+}
+
+template<>
+inline void write(const double& i)
+{
+    writeDouble(i);
+}
+
+inline void write() { // writes '\n'
+    writeChar('\n');
+}
+
+#endif
 
 int main() {
     // write your code here
