@@ -299,7 +299,7 @@ inline void write(const char& i)
 template<>
 inline void write(const double& i)
 {
-    writeDouble(i);
+    writeDouble(i, 10);
 }
 
 inline void write() { // writes '\n'
